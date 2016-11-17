@@ -7,6 +7,8 @@ bool is_prime(unsigned int n);
 //this is a slow primality test
 bool is_prime_brute_force(unsigned int n);
 
+bool is_prime_square_root(unsigned int aNum);
+
 //this is a fast (and loose) primality test
 bool is_prime_miller_rabin(unsigned int n);
 

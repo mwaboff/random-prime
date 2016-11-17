@@ -81,9 +81,26 @@ bool is_prime_brute_force(unsigned int n){
     return true;
 }
 
+// Version of brute forcing while limiting search parameters by the sqrt of the value.
+bool is_prime_square_root(unsigned int aNum){
+    if(aNum % 2 == 0){
+        return false;
+    }
+    
+    int sqrtNum = sqrt(aNum);
+    for(int i = 3; i < (sqrtNum); i += 2){
+        if((sqrtNum) % i == 0){    // No factor will be greater than 1/2 the value of aNum
+            return false;
+        }
+    }
+    return true;
+}
+
 //just a wrapper so I can quickly change methods
 bool is_prime(unsigned int n){
-    return is_prime_miller_rabin(n);
+    //return is_prime_miller_rabin(n);
+    //return is_prime_square_root(n);
+    return is_prime_brute_force(n);
 }
 
 //the handler for the outside world
